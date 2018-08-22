@@ -71,11 +71,12 @@ redraw = () ->
     console.log(c)
     g.select("circle:nth-child(#{mi+1})")
       .call(dragtail)
-
-    cost = -d.x*1.0-(st.x-w*0.5+2.5)
+    threshold = w*0.5 + 10
+    cost = if (st.x < threshold or ed.x < threshold) then -d.x*1.0-(st.x-threshold) else 0.0
     t.html(
-      "<p>Trajectory Length #{len} </p>
-      <p>Agent Overlapping Cost #{cost} </p>"
+      "<li class='collection-item'>Trajectory Length <span class='badge'>#{len.toFixed(2)} </span></li>
+      <li class='collection-item'>Agent Overlapping Cost <span class='badge'>#{cost.toFixed(2)} </span></li>
+      "
     )
 
 
