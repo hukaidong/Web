@@ -1,5 +1,11 @@
 nav.black
   .nav-wrapper
-    ul#nav-mobile.right
-      li.center-align == (link_to "Home", "home#index")
-      li.center-align == (link_to "project", "project#all")
+    ul.nav-mobile.right
+      li.center-align == (link_to "Home", home_path)
+      li.center-align == (link_to "Projects", "#", {\
+        :class => "dropdown-trigger",\
+        "data-target" => "p"})
+
+ul#p.dropdown-content.black
+    li == (link_to "All", gallary_all_path)
+    li == (link_to "Agent Overlapping", gallary_item_path(:item => "ao"))
