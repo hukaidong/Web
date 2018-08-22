@@ -1,0 +1,28 @@
+@keyframes shining
+  to
+    opacity: 0.3
+
+circle.agent
+  r: 10
+  fill: red
+  stroke-width: 2
+  stroke-dasharray: 2
+  animation-duration: 0.4s
+  animation-delay: 0s
+  animation-name: shining
+  animation-direction: alternate
+  animation-iteration-count: infinite
+
+rect.obstacle
+  fill: yellow
+  opacity: 0.3
+
+rect.boundary
+  fill: none
+  opacity: 0.5
+  stroke: blue
+  stroke-width: 1
+
+circle.active
+  fill: green
+
