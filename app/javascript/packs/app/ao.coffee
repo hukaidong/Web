@@ -5,7 +5,6 @@ import * as d3 from "d3"
 import * as Victor from "victor"
 
 redraw = () ->
-  console.log("redrawing")
   vis = d3.select("#vis")
   w = vis.node()
     .getBoundingClientRect()
@@ -31,7 +30,6 @@ redraw = () ->
   t = d3.select("#dat")
 
   update = (x1, y1, x2, y2) ->
-    console.log("updating")
     st = new Victor(x1, y1)
     ed = new Victor(x2, y2)
     d = ed.clone().subtract(st)
@@ -68,7 +66,6 @@ redraw = () ->
 
     c = g.select("circle:nth-child(1)")
       .call(draghead)
-    console.log(c)
     g.select("circle:nth-child(#{mi+1})")
       .call(dragtail)
     threshold = w*0.5 + 10
