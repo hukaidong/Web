@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'gallary' => 'gallary#all', as: :gallary_all
-  get 'gallary/app/:item' => 'gallary#app', as: :gallary_item
+  get 'projects' => 'gallary#all', as: :gallary_all
+  get 'projects/app/:item' => 'gallary#app', as: :gallary_item
 
   get 'home/index', as: :home
 

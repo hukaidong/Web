@@ -21,10 +21,6 @@ redraw = () ->
     .classed("obstacle", true)
     .attr("width", w * 0.5)
     .attr("height", h)
-  bg.append("rect")
-    .classed("boundary", true)
-    .attr("width", w)
-    .attr("height", h)
 
   g = svg.append("g")
   t = d3.select("#dat")
@@ -49,12 +45,10 @@ redraw = () ->
 
     g.selectAll("circle")
       .classed("agent", true)
+      .classed('term', doubleEndIf(true, false))
       .attr('cx', (d) -> d.coor.x)
       .attr('cy', (d) -> d.coor.y)
-      # .style("animation-name", "none")
       .style('animation-delay', (d) -> "#{d.op}s")
-      .style('stroke', doubleEndIf("blue", "none"))
-      # .style('fill-opacity', (d) -> d.op*0.8 + 0.2)
 
 
     bdx = () -> Math.min(Math.max(d3.event.x, 0), w)
