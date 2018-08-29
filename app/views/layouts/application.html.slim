@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Kdweb
+    = csrf_meta_tags
+    = csp_meta_tag
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    link[href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"]
+    = stylesheet_pack_tag    'layout/init', media: 'all'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render template: "frames/navbar"
+    .container == yield
+    = javascript_pack_tag    'layout/init'

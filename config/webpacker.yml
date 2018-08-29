@@ -14,8 +14,8 @@ default: &default
   cache_manifest: false
 
   extensions:
-    - .coffee
     - .jsx
+    - .coffee
     - .js
     - .sass
     - .scss

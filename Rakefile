@@ -4,3 +4,8 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+task :install do
+  `rails webpacker:install:coffee`
+  `rails webpacker:install:react`
+end

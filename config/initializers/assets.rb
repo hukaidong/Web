@@ -14,4 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w[ 
   materialize-css/dist/css/materialize.min.css 
+  material-icons/css/material-icons.min.css
 ]
