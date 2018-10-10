@@ -6,14 +6,10 @@ nav.orange
         :class => "dropdown-trigger",\
         "data-target" => "p"})
       - if user_signed_in?
-          li.center-align: a href="#"
-            | user.
-            = current_user.id
-          li.center-align: a href="#"
-            | session.
-            = user_session
+          - if current_user.id == 1
+            li.center-align == (link_to "admin", db_mgr_path)
           li.center-align == (link_to "log out", \
-          destroy_user_session_path, method: :delete) 
+            destroy_user_session_path, method: :delete) 
       - else
           li.center-align == (link_to "login", new_user_session_path)
 

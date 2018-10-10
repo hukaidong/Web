@@ -1,0 +1,10 @@
+h1 Direct Database Accessing
+= form_tag db_mgr_path, method: "post"
+  .input-field
+    = text_area_tag :q, nil, class: "materialize-textarea"
+    = label_tag :q, "SQL Query:"
+  = submit_tag "submit"
+  
+- if @table
+  p 
+    = @table
