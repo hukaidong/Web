@@ -1,10 +1,36 @@
 h1 Direct Database Accessing
-= form_tag db_mgr_path, method: "post"
-  .input-field
-    = text_area_tag :q, nil, class: "materialize-textarea"
-    = label_tag :q, "SQL Query:"
-  = submit_tag "submit"
+.section
+  = form_tag db_mgr_path, method: "post"
+    .input-field
+      = text_area_tag :q, nil, class: "materialize-textarea"
+      = label_tag :q, "SQL Query:"
+    = submit_tag "submit", class: "btn waves-effect waves-light"
   
-- if @table
-  p 
-    = @table
+.section
+  - if @query
+    .row
+      .col.s3
+        p Following messages have been sent to MySQL: 
+      .col.s9
+        .card.blue-grey.white-text
+          .card-content = @query
+  - if @err
+    .row
+      .col.s3
+        p During execution, an error occured:
+      .col.s9
+        .card.red.darken-4.white-text
+          .card-content = @err
+  - if @table
+    .row: .col.s12
+      p Results are
+      .card.orange.lighten-5: .card-content 
+        table
+          thead: tr
+            - for x in @table.columns
+              th = x
+          tbody
+            - for r in @table.rows
+              tr - for e in r
+                th = e
+            

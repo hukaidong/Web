@@ -1,9 +1,21 @@
 class AdminController < ApplicationController
+  def _query q
+    ActiveRecord::Base.connection.exec_query q
+  end
+
   def db_manager
     unless user_signed_in? and current_user.id == 1
       render :file => "public/401.html", :status => :unauthorized
     else
-      @table = params[:q]
+      if @query = params[:q]
+        begin
+          @table = _query @query
+          @err = nil
+        rescue => ex
+          @table = nil
+          @err = ex.message
+        end
+      end
     end
   end
 end
