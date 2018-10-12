@@ -1,3 +1,5 @@
+require 'benchmark'
+
 class AdminController < ApplicationController
   def _query q
     ActiveRecord::Base.connection.exec_query q
@@ -9,7 +11,9 @@ class AdminController < ApplicationController
     else
       if @query = params[:q]
         begin
-          @table = _query @query
+          @t = Benchmark.realtime do
+            @table = _query @query
+          end
           @err = nil
         rescue => ex
           @table = nil

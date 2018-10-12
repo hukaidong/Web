@@ -4,6 +4,7 @@ h1 Direct Database Accessing
     .input-field
       = text_area_tag :q, nil, class: "materialize-textarea"
       = label_tag :q, "SQL Query:"
+      = select_tag :dbn, options_for_select(%w[RDS RedShift(demo)])
     = submit_tag "submit", class: "btn waves-effect waves-light"
   
 .section
@@ -23,7 +24,10 @@ h1 Direct Database Accessing
           .card-content = @err
   - if @table
     .row: .col.s12
-      p Results are (truncated 50 rows for the demo purpose)
+      p 
+        | Results are returned in #{(@t*1000).round(4)} miliseconds.
+          Only first 50 columns are shown for the demo purpose.
+
       #scroll-wrapper style="overflow:auto;display:block"
         table.responsive-table.center-align 
           thead: tr
