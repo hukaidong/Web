@@ -1,11 +1,18 @@
 h1 Direct Database Accessing
 .section
   = form_tag db_mgr_path, method: "post"
-    .input-field
-      = text_area_tag :q, nil, class: "materialize-textarea"
-      = label_tag :q, "SQL Query:"
-      = select_tag :db, options_for_select(%w[MySQL BigQuery], "MySQL")
-    = submit_tag "submit", class: "btn waves-effect waves-light"
+    .row 
+      .input-field.col.m8.s12
+        = text_area_tag :q, nil, class: "materialize-textarea"
+        = label_tag :q, "SQL Query:"
+      .input-field.col.m4.s12
+        - unless @db
+          = select_tag :db, options_for_select(%w[MySQL BigQuery], "MySQL")
+        - else
+          = select_tag :db, options_for_select(%w[MySQL BigQuery], @db)
+        = label_tag "Source:"
+    .row
+      = submit_tag "submit", class: "btn waves-effect waves-light"
   
 .section
   - if @query
