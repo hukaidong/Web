@@ -12,7 +12,7 @@ h1 Direct Database Accessing
           = select_tag :db, options_for_select(%w[MySQL BigQuery], @db)
         = label_tag "Source:"
     .row
-      = submit_tag "submit", class: "btn waves-effect waves-light"
+      = button_tag "submit", class: "btn waves-effect waves-light"
   
 .section
   - if @query
@@ -24,9 +24,6 @@ h1 Direct Database Accessing
       .col.s12.m9
         .card.blue-grey.white-text
           .card-content = @query
-  p
-    | table got:
-    = @table
   - if @err
     .row
       .col.s12.m3
