@@ -4,16 +4,22 @@ h1 Direct Database Accessing
     .input-field
       = text_area_tag :q, nil, class: "materialize-textarea"
       = label_tag :q, "SQL Query:"
+      = select_tag :db, options_for_select(%w[MySQL BigQuery], "MySQL")
     = submit_tag "submit", class: "btn waves-effect waves-light"
   
 .section
   - if @query
     .row
       .col.s12.m3
-        p Following messages have been sent to MySQL: 
+        p 
+          | Following messages have been sent to 
+          = @db
       .col.s12.m9
         .card.blue-grey.white-text
           .card-content = @query
+  p
+    | table got:
+    = @table
   - if @err
     .row
       .col.s12.m3
