@@ -2,9 +2,9 @@ class Mysql < ActiveRecord::Base
   establish_connection(
   :adapter  => "mysql2",
   :host     => "localhost",
-  :username => "kaidong",
-  :password => "mypass",
-  :database => "testdb"
+  :username => "temp_user_for_course",
+  :password => "temp_pass_for_course",
+  :database => "instacart"
 )
 
 end
