@@ -7,9 +7,13 @@ h1 Direct Database Accessing
         = label_tag :q, "SQL Query:"
       .input-field.col.m4.s12
         - unless @db
-          = select_tag :db, options_for_select(%w[MySQL BigQuery], "MySQL")
+          = select_tag :db, options_for_select(\
+            %w[MySQL BigQuery] << ["MajorDB", {disabled: true}], \
+            "MySQL")
         - else
-          = select_tag :db, options_for_select(%w[MySQL BigQuery], @db)
+          = select_tag :db, options_for_select(\
+            %w[MySQL BigQuery] << ["MajorDB", {disabled: true}], \
+            @db)
         = label_tag "Source:"
     .row
       = button_tag "submit", class: "btn waves-effect waves-light"
