@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/kaidonghu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ketonehu.com
+  * I am kaidonghu (https://keybase.io/kaidonghu) on keybase.
+  * I have a public key ASAiBtYkTMtPVeSpvmO25SVwpveSVjUTpqbR8-yDJqKWlAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01202206d6244ccb4f55e4a9be63b6e52570a6f792563513a6a6d1f3ec8326a296940a",
+      "host": "keybase.io",
+      "kid": "01202206d6244ccb4f55e4a9be63b6e52570a6f792563513a6a6d1f3ec8326a296940a",
+      "uid": "dac208e2f42e52b68bf818ac29ada419",
+      "username": "kaidonghu"
+    },
+    "merkle_root": {
+      "ctime": 1547750825,
+      "hash": "85c6fde5ddb6c3d84d1a381984514cd0c19b7bcf04289a767ec15ce85c81763d6ecbd42fd810e21d151ed9100dde325f6ece536a0ccde4ed9da2a4ae2533e0c0",
+      "hash_meta": "47d985b4001dfdc0842a9044f526b60ee9206f65f5709bcfceeac3e1f1f5288f",
+      "seqno": 4450730
+    },
+    "service": {
+      "entropy": "l+CW1LjMne6oZdApPu5IZ8+z",
+      "hostname": "ketonehu.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.13.1"
+  },
+  "ctime": 1547750831,
+  "expire_in": 504576000,
+  "prev": "fadcd1d38fa3f9591dc82cb13dc55ab3f09fe33e2318d92085c65f576611e256",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIgbWJEzLT1Xkqb5jtuUlcKb3klY1E6am0fPsgyailpQKp3BheWxvYWTESpcCB8Qg+tzR04+j+VkdyCyxPcVas/Cf4z4jGNkghcZfV2YR4lbEIE98UcekFyYJfjNc9bV3Od5Oj7vIDYjxydCslUbYUIWgAgHCo3NpZ8RACcuoeTAA50qWFY2OIFAh7exuM8m8+Rhz0RjhoTJgPRu/eXOx9DdwIK87Agoy1tZbnJOVKT7r3t2wEz7IYgTHA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPBsjQKfh/oBUdwNpBXsad+ao9Qi4Vb5DQgOVdzwvCX5o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kaidonghu
+
+==================================================================
