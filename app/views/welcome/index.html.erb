@@ -1,8 +1,9 @@
 <h2>Hello World</h2>
 <p>
   The time is now: <%= Time.now %>
-  <%= form_with url:a_number_path, local:true do |f| %>
-    <%= f.text_field :a_number,  value: @a_number.as_integer %>
-    <%= f.submit "update number" %>
+  <%= form_with url:update_vars_path, local:true do |f| %>
+    <p> Give me a number: <%= f.text_field :a_number,  value: @a_number.as_integer %> </p>
+    <p> Give me a message: <%= f.text_field :a_message,  value: @a_message.as_string %> </p>
+    <p> <%= f.submit "update" %> </p>
   <% end %>
 </p>
