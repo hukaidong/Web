@@ -1,2 +1,13 @@
 <h2>File serving</h2>
+<%= debug @justfile %>
+<%= debug @justfile.main_file %>
+<% if @justfile.main_file.attached? %>
+<%= link_to @justfile.main_file.filename, @justfile.main_file %>
+<% end %>
+<%= form_with model: @justfile do |f| %>
+  <p> Label: <%= f.label :main_file %> </p>
+  <p> File:  <%= f.file_field :main_file%> </p>
+  <p> <%= f.submit %> </p>
+<% end %>
+
 

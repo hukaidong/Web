@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 1
+  int_: 1
+  float_: 1.5
+  str_: MyString
+  bool_: false
+
+two:
+  name: MyString
+  type: 1
+  int_: 1
+  float_: 1.5
+  str_: MyString
+  bool_: false
