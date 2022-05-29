@@ -9,7 +9,6 @@
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.1",
     "esbuild": "^0.14.41",
-    "material-design-icons": "^3.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
