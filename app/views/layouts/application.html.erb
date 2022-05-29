@@ -10,7 +10,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="margin:0">
+    <div style="margin:20px">
+      <%= yield %>
+    </div>
   </body>
 </html>
