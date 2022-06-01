@@ -1,13 +1,14 @@
 <h2>File serving</h2>
-<%= debug @justfile %>
-<%= debug @justfile.main_file %>
 <% if @justfile.main_file.attached? %>
-<%= link_to @justfile.main_file.filename, @justfile.main_file %>
+<p> Here's my last uploaded file: <%= link_to @justfile.main_file.filename, @justfile.main_file %></p>
+<p> Uploaded at: <%= @justfile.updated_at %> </p>
 <% end %>
+
+<h2> Pin another file? </h2>
 <%= form_with model: @justfile do |f| %>
-  <p> Label: <%= f.label :main_file %> </p>
+  <%= f.hidden_field :id, value: @justfile.id %>
   <p> File:  <%= f.file_field :main_file%> </p>
-  <p> <%= f.submit %> </p>
+  <p> <%= f.submit "Submit" %> </p>
 <% end %>
 
 

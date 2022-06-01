@@ -9,19 +9,16 @@ class JustFilesController < ApplicationController
   end
 
   def update
-    puts "-----Just File"
-    puts plain: "#{params.inspect}\n#{@just_file.inspect}\n"
-    #@just_file.main_file.attach file_param
     @just_file.update! main_file: file_param
-    redirect_to fileserve_path
+    redirect_back fallback_location: root_path
   end
 
   private
   def set_file
-    @just_file = JustFile.first_or_create!
+    @just_file = JustFile.where(id: params[:id])
   end
 
   def file_param
-    params[:just_file].require :main_file
+    params.require(:just_file).require(:main_file)
   end
 end

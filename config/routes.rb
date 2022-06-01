@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'welcome#index'
   get 'fileserve', to: 'welcome#fileserve'
+  get 'p', to: 'welcome#fileserve_private'
   scope 'variables' do
     post 'update_vars', to: 'welcome#update_vars'
   end
-  resource :just_file, only: [:show, :update]
+  resources 'just_files', only: [:show, :update]
 end

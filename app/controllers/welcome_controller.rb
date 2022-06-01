@@ -2,7 +2,14 @@ class WelcomeController < ApplicationController
   before_action :get_a_number
 
   def fileserve
-    @justfile = JustFile.first_or_create
+    @justfile = JustFile.find_or_create_by(name:"public")
+    session[:serve_from] = request.referer
+  end
+
+  def fileserve_private
+    @justfile = JustFile.find_or_create_by(name:"private")
+    session[:serve_from] = request.referer
+    render :fileserve
   end
 
   def update_vars
